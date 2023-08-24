@@ -7,10 +7,7 @@ st.title('🦜🔗 Quickstart App')
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 def generate_response(input_text):
-  llm = ChatOpenAI(
-            model_name='gpt-3.5-turbo',
-            temperature=0.1,
-        )
+  llm = ChatOpenAI(temperature=0.1, openai_api_key=openai_api_key,model_name='gpt-3.5-turbo')
   st.info(llm(input_text))
 
 with st.form('my_form'):
