@@ -1,13 +1,12 @@
 import streamlit as st
 from langchain.llms import OpenAI
-from langchain.chat_models import ChatOpenAI
 
 st.title('🦜🔗 Quickstart App')
 
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 def generate_response(input_text):
-  llm = ChatOpenAI(temperature=0.1, openai_api_key=openai_api_key,model_name='gpt-3.5-turbo')
+  llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
   st.info(llm(input_text))
 
 with st.form('my_form'):
